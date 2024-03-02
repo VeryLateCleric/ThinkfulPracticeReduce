@@ -27,3 +27,4 @@ const parksToAreasObject = parks.reduce((result, park) => {
 }, {})
 
 console.log(parksToAreasObject)
+
