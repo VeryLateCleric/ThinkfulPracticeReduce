@@ -66,3 +66,31 @@ function countCorrectAnswers(answers) {
 }
 const correctAnswerCount = countCorrectAnswers(answers)
 console.log(correctAnswerCount)
+
+// function findAnswer(answers, questionToMatch) {
+//     return answers.find(answer => answer.question === questionToMatch);
+//   }
+
+function findAnswer(studentAnswers, questionToMatch) {
+    return studentAnswers.reduce((foundAnswer, answer) => {
+        // check if question matches and return answer
+        return answer.question === questionToMatch ? answer : foundAnswer;
+    }, null);
+} //wrote it a few times so it could stick
+// return studentAnswers.reduce((foundAnswer, answer) => {
+//     return answer.question === questionToMatch ? answer : foundAnswer;
+// }, null);
+// return studentAnswers.reduce((foundAnswer, answer) => {
+//     return answer.question === questionToMatch ? answer : foundAnswer;
+// }, null);
+// return studentAnswers.reduce((foundAnswer, answer) => {
+//     return answer.question === questionToMatch ? answer : foundAnswer;
+// }, null);
+
+const questionToFind = 'Who wrote "Romeo and Juliet"?';
+const questionToFind2 = 'Explain the process of photosynthesis.';
+const foundAnswer = findAnswer(answers, questionToFind);
+const foundAnswer2 = findAnswer(answers, questionToFind2);
+
+console.log("Found Answer:", foundAnswer);
+console.log("Found Answer 2:", foundAnswer2);
